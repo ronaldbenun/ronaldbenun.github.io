@@ -4,7 +4,7 @@ body {
     padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: lightblue; /* Sets the background color to light blue */
+    background-color: rgb(219, 243, 252); /* Sets the background color to very light blue */
 }
 
 header {
