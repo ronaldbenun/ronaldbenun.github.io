@@ -12,7 +12,7 @@ window.onload = function() {
 
 function openPsalmFolder() {
     var selectedPsalm = document.getElementById('psalms-select').value;
-    var path = 'psalms/' + selectedPsalm + '/'; // Path to the Psalm directory
+    var path = 'psalms/' + selectedPsalm + '/'; 
     fetchPsalmContents(path);
 }
 
@@ -27,8 +27,10 @@ function fetchPsalmContents(path) {
             contentDiv.innerHTML = ''; // Clear previous content
             data.forEach(item => {
                 const link = document.createElement('a');
-                link.href = item.html_url;
+                const rawUrl = `https://docs.google.com/viewer?url=${item.download_url}&embedded=true`;
+                link.href = rawUrl;
                 link.textContent = item.name;
+                link.target = '_blank'; // Open in a new tab
                 contentDiv.appendChild(link);
                 contentDiv.appendChild(document.createElement('br'));
             });
